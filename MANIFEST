@@ -1,0 +1,12 @@
+Changes
+ignore.txt
+lib/EPFL/Service/Open.pm
+LICENSE
+MANIFEST			This list of files
+MANIFEST.SKIP
+README.md
+t/00-load.t
+t/boilerplate.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
