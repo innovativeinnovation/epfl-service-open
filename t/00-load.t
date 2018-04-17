@@ -9,7 +9,7 @@ use Test::More;
 plan tests => 1;
 
 BEGIN {
-    use_ok( 'EPFL::Service::Open' ) || print "Bail out!\n";
+  use_ok('EPFL::Service::Open') || print "Bail out!\n";
 }
 
-diag( "Testing EPFL::Service::Open $EPFL::Service::Open::VERSION, Perl $], $^X" );
+diag("Testing EPFL::Service::Open $EPFL::Service::Open::VERSION, Perl $], $^X");
