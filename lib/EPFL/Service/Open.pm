@@ -6,61 +6,94 @@ use warnings;
 
 =head1 NAME
 
-EPFL::Service::Open - The great new EPFL::Service::Open!
+EPFL::Service::Open - Open the EPFL website (service) associated with the
+Git repository.
 
 =head1 VERSION
 
-Version 0.01
+Version 1.00
 
 =cut
 
-our $VERSION = '0.01';
-
+our $VERSION = '1.00';
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
+Retrieve the EPFL website (service) associated with the Git repository.
 
-Perhaps a little code snippet.
+    use EPFL::Service::Open qw( getService );
 
-    use EPFL::Service::Open;
+    my $serviceUrl = getService('git@github.com:epfl-devrun/epfl-news-reader.git');
 
-    my $foo = EPFL::Service::Open->new();
-    ...
+Via the command line epfl-service-open
 
-=head1 EXPORT
+=head1 DESCRIPTION
 
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
+A simple module to retrieve the EPFL website (service) associated with the
+Git repository.
+
+=cut
+
+my %REPOSITORY_LIST = (
+
+  # IDevelop
+  'bill2myprint'                   => 'https://ofrf.epfl.ch',
+  'epfl-news'                      => 'https://actu.epfl.ch',
+  'homepage'                       => 'https://homepage.epfl.ch',
+  'homepage-archiveweb.epfl.ch'    => 'https://archiveweb.epfl.ch',
+  'kis-mobile'                     => 'http://m.epfl.ch',
+  'kis-bootstrap'                  => 'https://static.epfl.ch',
+  'memento'                        => 'https://memento.epfl.ch',
+  'polyblog'                       => 'https://blogs.epfl.ch',
+  'polywiki'                       => 'https://wiki.epfl.ch',
+  'press-release'                  => 'https://rdp.epfl.ch',
+  'science-cruise-data-management' => 'https://scdm.epfl.ch',
+  'site-diffusion-mediatheque'     => 'https://mediatheque.epfl.ch',
+  'web2010'                        => 'https://www.epfl.ch',
+
+  # DevRun
+  'epfl-devrun.github.io' => 'https://epfl-devrun.github.io/',
+  'epfl-news-reader'      => 'https://epfl-devrun.github.io/epfl-news-reader/',
+);
+
+use base 'Exporter';
+our @EXPORT_OK = qw( getService );
 
 =head1 SUBROUTINES/METHODS
 
-=head2 function1
+=head2 getService( $repository )
+
+Return the EPFL website (service) associated with the Git repository or undef.
 
 =cut
 
-sub function1 {
-}
+sub getService {
+  my $repository = shift;
+  return if not defined $repository;
 
-=head2 function2
+  my @parts = split /\//xms, $repository;
+  my $gitName = $parts[-1];
+  return if not defined $gitName;
 
-=cut
+  @parts = split /[.]/xms, $gitName;
+  pop @parts;
+  my $projectName = join q{.}, @parts;
 
-sub function2 {
+  if ( $REPOSITORY_LIST{$projectName} ) {
+    return $REPOSITORY_LIST{$projectName};
+  }
+  return;
 }
 
 =head1 AUTHOR
 
 William Belle, C<< <william.belle at gmail.com> >>
 
-=head1 BUGS
+=head1 BUGS AND LIMITATIONS
 
-Please report any bugs or feature requests to C<bug-epfl-service-open at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=EPFL-Service-Open>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-
-
+Please report any bugs or feature requests here L<https://github.com/epfl-devrun/epfl-service-open/issues>.
+I will be notified, and then you'll automatically be notified of progress on
+your bug as I make changes.
 
 =head1 SUPPORT
 
@@ -68,14 +101,9 @@ You can find documentation for this module with the perldoc command.
 
     perldoc EPFL::Service::Open
 
-
 You can also look for information at:
 
 =over 4
-
-=item * RT: CPAN's request tracker (report bugs here)
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=EPFL-Service-Open>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
@@ -91,13 +119,9 @@ L<http://search.cpan.org/dist/EPFL-Service-Open/>
 
 =back
 
-
-=head1 ACKNOWLEDGEMENTS
-
-
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2018 William Belle.
+Copyright ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2018.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -111,7 +135,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-
 =cut
 
-1; # End of EPFL::Service::Open
+1;
