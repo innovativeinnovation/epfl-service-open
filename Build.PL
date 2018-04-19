@@ -13,15 +13,14 @@ my $builder = Module::Build->new(
   dist_version_from  => 'lib/EPFL/Service/Open.pm',
   release_status     => 'stable',
   configure_requires => {
-    'Module::Build' => '0',
+    'Module::Build' => '0.4224',
   },
   build_requires => {
     'Test::More' => '0',
   },
   requires => {
-
-    #'ABC'              => '1.6',
-    #'Foo::Bar::Module' => '5.0401',
+    'Browser::Open' => '0.04',
+    'IPC::Run'      => '0.99',
   },
   add_to_cleanup => ['EPFL-Service-Open-*'],
 );
