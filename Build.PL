@@ -22,6 +22,11 @@ my $builder = Module::Build->new(
     'Browser::Open' => '0.04',
     'IPC::Run'      => '0.99',
   },
+  meta_merge => {
+    resources => {
+      repository => 'https://github.com/epfl-devrun/epfl-service-open',
+    },
+  },
   add_to_cleanup => ['EPFL-Service-Open-*'],
 );
 
