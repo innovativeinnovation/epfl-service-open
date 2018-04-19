@@ -27,7 +27,8 @@ my $builder = Module::Build->new(
       repository => 'https://github.com/epfl-devrun/epfl-service-open',
     },
   },
-  add_to_cleanup => ['EPFL-Service-Open-*'],
+  add_to_cleanup     => ['EPFL-Service-Open-*'],
+  create_makefile_pl => 'traditional',
 );
 
 $builder->create_build_script();
