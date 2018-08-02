@@ -8,17 +8,10 @@ Setup
 -----
 
 ```bash
-$ git clone REPO
-$ cd epfl-service-open
-$ perl Build.PL
-$ perl Build installdeps
-```
-
-Lint
-----
-
-```bash
-$ perlcritic lib/ bin/
+git clone git@github.com:epfl-devrun/epfl-service-open.git
+cd epfl-service-open
+perl Build.PL
+perl Build installdeps
 ```
 
 Test
@@ -27,13 +20,19 @@ Test
 Unit and integration tests:
 
 ```bash
-$ perl Build test
+perl Build test
 ```
 
 Code coverage:
 
 ```bash
-$ perl Build testcover
+perl Build testcover
+```
+
+To enable Author tests:
+
+```bash
+export RELEASE_TESTING=1
 ```
 
 Run
