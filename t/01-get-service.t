@@ -12,8 +12,8 @@ use Test::More tests => 4;
 is( getService(undef), undef, 'undef getService' );
 is( getService(''),    undef, 'empty string getService' );
 is(
-  getService('git@github.com:epfl-devrun/epfl-news-reader.git'),
-  'https://epfl-devrun.github.io/epfl-news-reader/',
+  getService('git@github.com:epfl-devrun/polywiki.git'),
+  'https://wiki.epfl.ch',
   'resolve getService'
 );
 is( getService('git@github.com:taylor-swift.git'),
