@@ -1,5 +1,9 @@
 Revision history for EPFL-Service-Open
 
+1.02    2018-10-17
+        Remove old repositories
+        Update copyright (transfer from EPFL DevRun)
+
 1.01    2018-10-03
         Add new repositories
         Criticise code in tests
