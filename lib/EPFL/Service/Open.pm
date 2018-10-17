@@ -52,10 +52,6 @@ my %REPOSITORY_LIST = (
   'science-cruise-data-management' => 'https://scdm.epfl.ch',
   'site-diffusion-mediatheque'     => 'https://mediatheque.epfl.ch',
   'web2010'                        => 'https://www.epfl.ch',
-
-  # DevRun
-  'epfl-devrun.github.io' => 'https://epfl-devrun.github.io/',
-  'epfl-news-reader'      => 'https://epfl-devrun.github.io/epfl-news-reader/',
 );
 
 use base 'Exporter';
