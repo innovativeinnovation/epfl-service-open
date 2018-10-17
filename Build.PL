@@ -25,7 +25,7 @@ my $builder = Module::Build->new(
   },
   meta_merge => {
     resources => {
-      repository => 'https://github.com/epfl-devrun/epfl-service-open',
+      repository => 'https://github.com/innovativeinnovation/epfl-service-open',
     },
   },
   add_to_cleanup     => ['EPFL-Service-Open-*'],
