@@ -23,7 +23,7 @@ Open the EPFL website (service) associated with the Git repository.
 
 =head1 VERSION
 
-Version 1.03
+Version 1.04
 
 =head1 USAGE
 
@@ -33,7 +33,7 @@ Version 1.03
 
 =cut
 
-our $VERSION = '1.03';
+our $VERSION = '1.04';
 
 my ($help);
 
