@@ -25,8 +25,6 @@ Retrieve the EPFL website (service) associated with the Git repository.
 
     my $serviceUrl = getService('git@github.com:epfl-devrun/epfl-news-reader.git');
 
-Via the command line epfl-service-open
-
 =head1 DESCRIPTION
 
 A simple module to retrieve the EPFL website (service) associated with the
@@ -82,6 +80,10 @@ sub getService {
 =head1 AUTHOR
 
 William Belle, C<< <william.belle at gmail.com> >>
+
+=head1 SEE ALSO
+
+See L<epfl-service-open> for the command line.
 
 =head1 BUGS AND LIMITATIONS
 
