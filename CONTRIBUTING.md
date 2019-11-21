@@ -8,7 +8,7 @@ Setup
 -----
 
 ```bash
-git clone git@github.com:epfl-devrun/epfl-service-open.git
+git clone git@github.com:innovativeinnovation/epfl-service-open.git
 cd epfl-service-open
 perl Build.PL
 perl Build installdeps

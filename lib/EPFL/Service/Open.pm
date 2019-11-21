@@ -23,7 +23,7 @@ Retrieve the EPFL website (service) associated with the Git repository.
 
     use EPFL::Service::Open qw( getService );
 
-    my $serviceUrl = getService('git@github.com:epfl-devrun/epfl-news-reader.git');
+    my $serviceUrl = getService('git@github.com:epfl-idevelop/epfl-theme-elements.git');
 
 =head1 DESCRIPTION
 
@@ -87,7 +87,8 @@ See L<epfl-service-open> for the command line.
 
 =head1 BUGS AND LIMITATIONS
 
-Please report any bugs or feature requests here L<https://github.com/epfl-devrun/epfl-service-open/issues>.
+Please report any bugs or feature requests here
+L<https://github.com/innovativeinnovation/epfl-service-open/issues>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
 
